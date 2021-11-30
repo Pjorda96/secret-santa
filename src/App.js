@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { sendEmail } from './services/email';
 import './App.css';
 
 const defaultUser = { name: '', email: '' };
@@ -6,7 +7,7 @@ const defaultUser = { name: '', email: '' };
 function App() {
   const [list, setList] = useState([{...defaultUser, id: 0}]);
   const [error, setError] = useState(false);
-  const [ok, setok] = useState(false);
+  const [ok, setOk] = useState(false);
 
   function handleChange(key, value, i) {
     const newList = [...list];
@@ -41,7 +42,9 @@ function App() {
       }
     }
 
-    // TODO: call api and ok
+    sendEmail(list, result).then(() => {
+      setOk(true)
+    });
   }
 
   function handleSubmit() {
@@ -75,7 +78,11 @@ function App() {
         Add
       </button>
 
-      <button type="button" onClick={handleSubmit}>
+      <button
+        type="button"
+        disabled={list.length < 3}
+        onClick={handleSubmit}
+      >
         Send
       </button>
 
