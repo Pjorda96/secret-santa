@@ -2,9 +2,6 @@
 
 /.idea
 
-# config file
-
-
 # dependencies
 /node_modules
 /.pnp
