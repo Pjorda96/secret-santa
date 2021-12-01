@@ -12,6 +12,8 @@ import './App.scss';
 
 const defaultUser = { name: '', email: '' };
 
+console.log('Logo credits: Steve Lianardo. => https://iconarchive.com/artist/stevelianardo.html')
+
 function App() {
   const [list, setList] = useState([{...defaultUser}]);
   const [error, setError] = useState(false);
