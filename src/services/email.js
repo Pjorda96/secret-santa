@@ -7,8 +7,6 @@ export async function sendEmail(fromList, toList) {
   // console.log('emailConfig', emailConfig)
   const { userId, template, serviceId } = config.email;
 
-  console.log(fromList, toList)
-
   return new Promise((resolve, reject) => {
     const emailList = fromList.map((user, i) => {
       const params = {

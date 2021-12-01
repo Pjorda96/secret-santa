@@ -1,0 +1,17 @@
+@import "~bootstrap/scss/bootstrap";
+
+.alerts {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.list-item {
+  position: relative;
+
+  .close-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}

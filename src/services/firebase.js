@@ -5,8 +5,6 @@ import config from '../config';
 const app = initializeApp(config.firebase);
 // const remoteConfig = getRemoteConfig(app);
 
-// console.log('remoteConfig', remoteConfig)
-
 // remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
 
 // const userId = getValue(remoteConfig, 'userId');
