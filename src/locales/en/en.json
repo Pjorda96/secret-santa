@@ -1,0 +1,24 @@
+{
+  "card": {
+    "title": "Secret Santa's participant #{{number}}",
+    "remove": "Remove",
+    "name": "Name",
+    "email": "Email"
+  },
+  "buttons": {
+    "add": "Add participant",
+    "send": "Send emails"
+  },
+  "alerts": {
+    "error": {
+      "title": "Ops, something is not correct",
+      "body": "HO HO HO. Santa needs correct data to send emails.",
+      "footer": "Check and click \"{{send}}\" again."
+    },
+    "success": {
+      "title": "Check your email",
+      "body": "HO HO HO An email has sent to you. Do not share the content of the email with any teammate!!",
+      "footer": "Remember to check the span folder and you can close this tab now or close the alert to start again."
+    }
+  }
+}

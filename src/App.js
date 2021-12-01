@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Alert, Card,
   FloatingLabel,
@@ -9,12 +10,14 @@ import {
 } from 'react-bootstrap';
 import { sendEmail } from './services/email';
 import './App.scss';
+import './services/i18n';
 
 const defaultUser = { name: '', email: '' };
 
 console.log('Logo credits: Steve Lianardo. => https://iconarchive.com/artist/stevelianardo.html')
 
 function App() {
+  const { t } = useTranslation();
   const [list, setList] = useState([{...defaultUser}]);
   const [error, setError] = useState(false);
   const [ok, setOk] = useState(false);
@@ -78,23 +81,23 @@ function App() {
             {
               list.map((user, i) => (
                 <ListGroupItem key={i} className="list-item">
-                  <Card.Title>Secret Santa's participant #{i + 1}</Card.Title>
+                  <Card.Title>{t('card.title', { number: i + 1 })}</Card.Title>
 
                   {
                     (list.length > 1) && (
-                      <CloseButton className="close-button" title="Remove" onClick={() => handleRemove(i)} />
+                      <CloseButton className="close-button" title={t('card.remove')} onClick={() => handleRemove(i)} />
                     )
                   }
 
-                  <FloatingLabel label="Name" className="mb-1">
+                  <FloatingLabel label={t('card.name')} className="mb-1">
                     <Form.Control
                       type="text"
                       value={user.name || ''}
-                      placeholder="Name"
+                      placeholder={t('card.name')}
                       onChange={e => handleChange('name', e.target.value, i)}
                     />
                   </FloatingLabel>
-                  <FloatingLabel label="Email">
+                  <FloatingLabel label={t('card.email')}>
                     <Form.Control
                       type="email"
                       value={user.email || ''}
@@ -115,7 +118,7 @@ function App() {
             disabled={list.length >= 20}
             onClick={handleAdd}
           >
-            Add participant
+            {t('buttons.add')}
           </Button>
           <Button
             type="button"
@@ -123,29 +126,21 @@ function App() {
             disabled={list.length < 3}
             onClick={handleSubmit}
           >
-            Send emails
+            {t('buttons.send')}
           </Button>
         </ButtonGroup>
 
         <div className="alerts">
           <Alert variant="danger" show={error} onClose={() => setError(false)} dismissible>
-            <Alert.Heading>Ops, something is not correct</Alert.Heading>
-            <p>
-              HO HO HO. Santa needs correct data to send emails.
-            </p>
-            <p>
-              Check and click "Send emails" again.
-            </p>
+            <Alert.Heading>{t('alerts.error.title')}</Alert.Heading>
+            <p>{t('alerts.error.body')}</p>
+            <p>{t('alerts.error.footer', { send: t('buttons.send') })}</p>
           </Alert>
 
           <Alert show={ok} variant="info" onClose={() => setOk(false)} dismissible>
-            <Alert.Heading>Check your email</Alert.Heading>
-            <p>
-              HO HO HO An email has sent to you. Do not share the content of the email with any teammate.
-            </p>
-            <p>
-              Remember to check the span folder and you can close this tab now or close the alert to start again.
-            </p>
+            <Alert.Heading>{t('alerts.success.title')}</Alert.Heading>
+            <p>{t('alerts.success.body')}</p>
+            <p>{t('alerts.success.footer')}</p>
           </Alert>
         </div>
       </div>

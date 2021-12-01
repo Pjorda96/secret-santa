@@ -1,0 +1,24 @@
+{
+  "card": {
+    "title": "Participant #{{number}}",
+    "remove": "Llevar",
+    "name": "Nom",
+    "email": "Correu"
+  },
+  "buttons": {
+    "add": "Anyadir participant",
+    "send": "Enviar correu"
+  },
+  "alerts": {
+    "error": {
+      "title": "Ops, alguna cosa no ha anat be",
+      "body": "Asegúrat de que les dades de tots estàn be.",
+      "footer": "Revisa i torna a clicar \"{{send}}\"."
+    },
+    "success": {
+      "title": "Revisa el teu correu",
+      "body": "S'ha enviat un correu a tots els participants. No compartixques el contingut amb ningú!!",
+      "footer": "Recorda revisar la carpeta de spam i ya pots tancar aquesta finestra o tancar la alerta per a començar de nou."
+    }
+  }
+}

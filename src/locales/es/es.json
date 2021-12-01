@@ -1,0 +1,24 @@
+{
+  "card": {
+    "title": "Participante #{{number}}",
+    "remove": "Quitar",
+    "name": "Nombre",
+    "email": "Email"
+  },
+  "buttons": {
+    "add": "Añadir participante",
+    "send": "Enviar emails"
+  },
+  "alerts": {
+    "error": {
+      "title": "Ops, algo no ha ido bien",
+      "body": "Asegúrate de que los datos de todos están bien.",
+      "footer": "Revisa y vuelve a clicar \"{{send}}\"."
+    },
+    "success": {
+      "title": "Revisa tu correo",
+      "body": "Se ha enviado un correo a todos los participantes. ¡¡No compartas el contenido con nadie!!",
+      "footer": "Recuerda revisar la carpeta de spam y ya puedes cerrar esta ventana o cerrar esta alerta para empezar de nuevo."
+    }
+  }
+}
