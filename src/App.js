@@ -80,7 +80,11 @@ function App() {
                 <ListGroupItem key={i} className="list-item">
                   <Card.Title>Secret Santa's participant #{i + 1}</Card.Title>
 
-                  <CloseButton className="close-button" onClick={() => handleRemove(i)} />
+                  {
+                    (list.length > 1) && (
+                      <CloseButton className="close-button" title="Remove" onClick={() => handleRemove(i)} />
+                    )
+                  }
 
                   <FloatingLabel label="Name" className="mb-1">
                     <Form.Control
@@ -108,6 +112,7 @@ function App() {
           <Button
             type="button"
             variant="secondary"
+            disabled={list.length >= 20}
             onClick={handleAdd}
           >
             Add participant
