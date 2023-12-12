@@ -8,7 +8,7 @@ import {
   ButtonGroup,
   Button, CloseButton,
 } from 'react-bootstrap';
-import { sendEmail } from './services/email';
+import { sendEmail, getTemplate } from './services/email';
 import './App.scss';
 import './services/i18n';
 
@@ -21,6 +21,8 @@ function App() {
   const [list, setList] = useState([{...defaultUser}]);
   const [error, setError] = useState(false);
   const [ok, setOk] = useState(false);
+
+  const template = getTemplate().name || 'default';
 
   function handleRemove(index) {
     const listCopy = [...list].filter((user, i) => i !== index)
@@ -76,6 +78,7 @@ function App() {
   return (
     <div className="App">
       <div className="container mt-5 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+        <p>{t('template', { template })}</p>
         <Card className="w-100">
           <ListGroup className="list-group-flush">
             {
