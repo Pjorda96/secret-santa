@@ -1,4 +1,5 @@
 {
+  "template": "Estás usando la plantilla {{template}}.",
   "card": {
     "title": "Participante #{{number}}",
     "remove": "Quitar",

@@ -9,7 +9,10 @@ const config = {
   },
   email: {
     userId: 'user_iyHzZzHfyVwt4n5tGpX0o',
-    template: 'template_3iori8k',
+    templates: {
+      default: 'template_3iori8k',
+      dramaQueens: 'template_rqnr88a',
+    },
     serviceId: 'service_sgs18qq',
   }
 }

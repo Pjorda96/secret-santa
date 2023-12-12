@@ -1,4 +1,5 @@
 {
+  "template": "You are using {{template}} template.",
   "card": {
     "title": "Secret Santa's participant #{{number}}",
     "remove": "Remove",
