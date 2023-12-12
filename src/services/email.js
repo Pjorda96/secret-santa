@@ -15,7 +15,7 @@ export const getTemplate = (() => {
 export async function sendEmail(fromList, toList) {
   // const { userId, template, serviceId } = emailConfig;
   // console.log('emailConfig', emailConfig)
-  const { userId, templates, serviceId } = config.email;
+  const { userId, serviceId } = config.email;
 
   return new Promise((resolve, reject) => {
     const emailList = fromList.map(({ name, email }, i) => {
