@@ -15,6 +15,9 @@ export const getTemplate = (() => {
 export async function sendEmail(fromList, toList) {
   // const { userId, template, serviceId } = emailConfig;
   // console.log('emailConfig', emailConfig)
+
+  const delay = fromList.length > 6;
+
   const { userId, serviceId } = config.email;
 
   return new Promise((resolve, reject) => {
@@ -26,6 +29,12 @@ export async function sendEmail(fromList, toList) {
       };
 
       const template = getTemplate().code;
+
+      if (delay) {
+        setTimeout(() => {
+          return emailjs.send(serviceId, template, params, userId);
+        }, i * 10000);
+      }
 
       return emailjs.send(serviceId, template, params, userId);
     });

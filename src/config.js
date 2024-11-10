@@ -14,6 +14,7 @@ const config = {
       dramaQueens: 'template_rqnr88a',
     },
     serviceId: 'service_sgs18qq',
+    limitRate: 999,
   }
 }
 
